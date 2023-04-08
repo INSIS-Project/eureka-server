@@ -10,11 +10,11 @@
 		<relativePath/>
 	</parent>
 
-	<groupId>com.insis</groupId>
+	<groupId>com.isep.acme</groupId>
 	<artifactId>eureka-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>eureka-server</name>
-	<description>Load Balancer implementado com o Eureka Server</description>
+	<description>Implementing Load Balancer with Eureka Server</description>
 
 	<properties>
 		<java.version>17</java.version>
