@@ -14,7 +14,7 @@ jobs:
         runs-on: ubuntu-latest
         defaults:
           run:
-            working-directory: './app'
+            working-directory: './eureka-server'
         steps:
           - name: 'Checkout GitHub Action'
             uses: actions/checkout@main
@@ -28,5 +28,5 @@ jobs:
               
           - name: 'Build Eureka Server Image'
             run: |
-              docker build . --tag ghcr.io/ana-rabelo/store:latest
-              docker push ghcr.io/ana-rabelo/store:latest
+              docker build . --tag ghcr.io/ana-rabelo/eureka-server:latest
+              docker push ghcr.io/ana-rabelo/eureka-server:latest
