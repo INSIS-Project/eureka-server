@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: eureka-verser ci
+name: eureka-server-ci
 
 on:
   push:
@@ -29,3 +29,13 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean install
+
+    - uses: mr-smithers-excellent/docker-build-push@v6
+    name: Build & push Docker image
+    with:
+      image: marcellodinizr/eureka-server
+      tags: latest
+      registry: docker.io
+      dockerfile: Dockerfile
+      username: ${{ secrets.DOCKER_USERNAME }}
+      password: ${{ secrets.DOCKER_PASSWORD }}

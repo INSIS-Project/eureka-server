@@ -7,3 +7,8 @@ FROM eclipse-temurin:17-jre-alpine AS app-runtime
 WORKDIR /app
 COPY --from=maven-build /usr/src/eureka-server/target/*.jar ./eureka-server.jar
 ENTRYPOINT ["java", "-jar", "eureka-server.jar"]
+
+FROM openjdk:17
+EXPOSE 8761
+ADD target/eureka-server.jar eureka-server.jar
+ENTRYPOINT [ "java", "-jar", "/eureka-server.jar"]
