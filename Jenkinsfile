@@ -11,7 +11,7 @@ pipeline {
 		stage("Build Docker Image") {
 			steps {
 				script {
-					bat "docker build -t marcellodinizr/eureka-server ."
+					sh "docker build -t marcellodinizr/eureka-server ."
 				}
 			}
 		}
